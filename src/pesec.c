@@ -147,7 +147,11 @@ int main(int argc, char *argv[])
 	// aslr
 	snprintf(field, MAX_MSG, "ASLR");	
 	output(field, (dllchar & 0x40) ? "yes" : "no");
-
+	
+	//he aslr
+	snprintf(field, MAX_MSG, "High entropy ASLR");
+	output(field,(dllchar & 0x20) ? "yes" : "no");
+	
 	// dep/nx
 	snprintf(field, MAX_MSG, "DEP/NX");	
 	output(field, (dllchar & 0x100) ? "yes" : "no");
